@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Check if taskText is not empty
     if (taskText === "") {
-      alert("Please enter a task.");
+      alert("Please enter a task."); // Prompt if input is empty
       return; // Exit the function if the input is empty
     }
 
@@ -21,14 +21,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const listItem = document.createElement("li");
     listItem.textContent = taskText;
 
-    // Create a remove button
+    // Create a new button element for removing the task
     const removeButton = document.createElement("button");
-    removeButton.textContent = "Remove";
-    removeButton.className = "remove-btn";
+    removeButton.textContent = "Remove"; // Set button text
+    removeButton.className = "remove-btn"; // Assign class name
 
-    // Assign an onclick event to remove the task
+    // Assign an onclick event to the remove button
     removeButton.onclick = () => {
-      taskList.removeChild(listItem);
+      taskList.removeChild(listItem); // Remove the li element from taskList
     };
 
     // Append the remove button to the li element
@@ -42,11 +42,11 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   // Attach Event Listeners
-  addButton.addEventListener("click", addTask);
+  addButton.addEventListener("click", addTask); // Call addTask when button is clicked
   taskInput.addEventListener("keypress", (event) => {
     // Check if the Enter key is pressed
     if (event.key === "Enter") {
-      addTask();
+      addTask(); // Call addTask if Enter is pressed
     }
   });
 });
